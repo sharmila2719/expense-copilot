@@ -1,0 +1,10 @@
+MARRIOTT HOTELS
+Downtown Chicago
+Date: 2026-01-20
+------------------------------
+Room (1 night)      320.00
+Resort Fee           25.00
+Tax                  41.40
+------------------------------
+Total               386.40
+USD

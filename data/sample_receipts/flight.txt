@@ -1,0 +1,10 @@
+UNITED AIRLINES
+Electronic Ticket Receipt
+Date: 2026-02-28
+Passenger: J. DOE
+SFO -> JFK  Economy
+------------------------------
+Base Fare           540.00
+Taxes & Fees         72.00
+Total               612.00
+USD

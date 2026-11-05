@@ -1,0 +1,12 @@
+BLUE BOTTLE COFFEE
+123 Market Street, San Francisco, CA
+Date: 2026-03-14
+------------------------------
+Cappuccino            5.50
+Avocado Toast        12.00
+Sparkling Water       3.50
+------------------------------
+Subtotal             21.00
+Tax                   1.85
+Total                22.85
+Card **** 4242

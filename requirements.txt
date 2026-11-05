@@ -1,0 +1,30 @@
+# Web / API
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+python-multipart==0.0.9
+pydantic==2.9.2
+pydantic-settings==2.5.2
+
+# Frontend
+streamlit==1.38.0
+requests==2.32.3
+
+# Storage / RAG
+chromadb==0.5.5
+# Pin posthog: chromadb 0.5.x calls the older telemetry capture() signature.
+# Newer posthog (>=3) breaks it with noisy "Failed to send telemetry" logs.
+posthog==2.5.0
+sentence-transformers==3.1.1
+
+# AWS Bedrock (optional provider)
+boto3==1.35.24
+
+# Receipt / file handling
+pillow==10.4.0
+pypdf==4.3.1
+
+# Utils
+python-dotenv==1.0.1
+
+# Write-up PDF generation (scripts/make_writeup_pdf.py)
+reportlab==4.2.2
