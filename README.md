@@ -74,21 +74,18 @@ pip install -r requirements.txt
 # 2. (optional) copy the env template; local mode is the default
 copy .env.example .env              # macOS/Linux: cp .env.example .env
 
-# 3. Seed sample policy + receipts (downloads the embedding model once)
-python -m scripts.seed
-
-# 4. Start the backend  (terminal 1)
+# 3. Start the backend  (terminal 1)
 uvicorn app.main:app --reload --port 8000
 
-# 5. Start the UI       (terminal 2)
+# 4. Start the UI       (terminal 2)
 streamlit run frontend/streamlit_app.py
 ```
 
 Open the Streamlit URL (usually http://localhost:8501). The FastAPI docs are at
 http://localhost:8000/docs.
 
-> The first `python -m scripts.seed` downloads the `all-MiniLM-L6-v2` embedding
-> model (~90 MB) once, then runs fully offline.
+> On first startup, the backend indexes the policy and downloads the
+> `all-MiniLM-L6-v2` embedding model (~90 MB). Later runs work offline.
 
 ---
 
@@ -106,8 +103,9 @@ http://localhost:8000/docs.
    BEDROCK_EMBED_MODEL=amazon.titan-embed-text-v2:0
    ```
 
-4. Re-seed to rebuild the vector index with Titan embeddings:
-   `python -m scripts.reindex` *(or `python -m scripts.seed`)*, then start the app.
+4. Restart the backend with the new provider setting, then open
+  http://localhost:8000/docs and call `POST /policy/reindex` to rebuild the
+  vector index with Titan embeddings.
 
 In Bedrock mode you can upload **receipt images** and Claude transcribes them;
 the chat agent composes natural-language answers grounded in the retrieved data.
@@ -155,12 +153,8 @@ frontend/
   streamlit_app.py     3-tab UI (Submit / Expenses / Chat)
 data/
   expense_policy.md    company policy (the RAG knowledge base)
-  sample_receipts/     example receipts for seeding
-scripts/
-  seed.py              load sample data
-  reindex.py           rebuild the policy vector index
+  sample_receipts/     example receipt text files
 requirements.txt
-WRITEUP.md             1-page write-up
 ```
 
 ---

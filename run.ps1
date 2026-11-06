@@ -3,7 +3,7 @@
 #
 # Usage:
 #   .\run.ps1          # start backend + UI (assumes setup already done)
-#   .\run.ps1 -Setup   # first-time: create venv, install deps, seed data
+#   .\run.ps1 -Setup   # first-time: create venv and install dependencies
 #
 # Open http://localhost:8501 once both windows are up.
 # ============================================================
@@ -22,8 +22,6 @@ if ($Setup -or -not (Test-Path ".\.venv")) {
     & $py -m pip install --upgrade pip
     & $py -m pip install -r requirements.txt
 
-    Write-Host "==> Seeding sample policy + receipts..." -ForegroundColor Cyan
-    & $py -m scripts.seed
 }
 
 Write-Host "==> Starting FastAPI backend on http://localhost:8000 ..." -ForegroundColor Green

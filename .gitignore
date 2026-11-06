@@ -15,6 +15,9 @@ data/chroma/
 data/uploads/
 *.sqlite3
 
+# Local helper scripts are not part of the public app repository
+scripts/
+
 # OS / IDE
 .DS_Store
 .vscode/

@@ -25,6 +25,3 @@ pypdf==4.3.1
 
 # Utils
 python-dotenv==1.0.1
-
-# Write-up PDF generation (scripts/make_writeup_pdf.py)
-reportlab==4.2.2
